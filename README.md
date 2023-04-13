@@ -15,9 +15,6 @@
 !!!!
 ```
 
-<img width="879" alt="image" src="https://user-images.githubusercontent.com/81813770/231728091-a35a70c6-66c7-42ce-af57-b4fd42438328.png">
-
-
 
 ## Setup instructions
 
@@ -34,3 +31,9 @@ docker compose up
   - Goto `/sports/sport/create/`
 - Season ending is again hidden behind a url, to stop accidental season ending.
   - Goto `/sports/season/<int:pk>/update`
+  
+  
+## Example
+
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/81813770/231728091-a35a70c6-66c7-42ce-af57-b4fd42438328.png">
+
