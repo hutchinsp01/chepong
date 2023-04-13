@@ -2,7 +2,7 @@
 
 ```
           ,;;;!!!!!;;.
-        :!!!!!!!!!!!!!!;    Uptick Chepong Leaderboard
+        :!!!!!!!!!!!!!!;    Chepong Leaderboard
       :!!!!!!!!!!!!!!!!!;       By Paul Hutchins
      ;!!!!!!!!!!!!!!!!!!!; 
     ;!!!!!!!!!!!!!!!!!!!!!
@@ -14,6 +14,9 @@
  .!!!!'
 !!!!
 ```
+
+<img width="879" alt="image" src="https://user-images.githubusercontent.com/81813770/231728091-a35a70c6-66c7-42ce-af57-b4fd42438328.png">
+
 
 
 ## Setup instructions
