@@ -1,0 +1,17 @@
+.git
+var
+node_modules
+**/.git
+**/node_modules
+**/*.pyc
+**/*.jsx
+**/*.js
+**/*.sass
+**/*.scss
+**/*.snap
+**/__pycache__
+**/*.storyshot
+**/test_fixtures
+
+# Frontend build metadata
+!./app/static/**

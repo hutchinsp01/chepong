@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load bootstrap5 %}
+
+
+{% block title %}Add Game{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h4>Add Game</h4>
+    <form action="{% url 'sports:game_create' season.pk %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
+    </form>
+</div>
+{% endblock %}

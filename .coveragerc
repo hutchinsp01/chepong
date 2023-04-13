@@ -1,0 +1,8 @@
+[run]
+branch = True
+omit = **/migrations/*.py
+
+[report]
+show_missing = True
+skip_covered = True
+omit = app/*/migrations/*.py

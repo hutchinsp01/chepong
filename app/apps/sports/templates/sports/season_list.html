@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}Current Seasons{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div>
+    <h4>Current Seasons</h4>
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th>Season</th>
+          {% comment %} <th>Top Player</th> {% endcomment %}
+          <th>Top MMR</th>
+        </tr>
+      </thead>
+      {% for season in seasons %}
+        <tr>
+          <th>
+            <a href="{% url 'sports:season_detail' season.id %}">{{ season }}</a>
+          </th>
+          {% comment %} <td>{{ season.top_player }}</td> {% endcomment %}
+          <td>{{ season.top_mmr }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}{{ season }}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div>
+    <h2>{{ season }}</h2>
+    <h4 class="text-muted">{{ season.start_date|date }} - {{ season.end_date|date}}</h4>
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Win %</th>
+          {% if season.sport.track_score %}
+            <th>Points Diff</th>
+          {% endif %}
+          <th>MMR</th>
+        </tr>
+      </thead>
+      {% for player in leaderboard %}
+        <tr>
+          <th>
+            <a href="{{ player.get_absolute_url }}">{{ player.short_str }}</a>
+          </th>
+          <td>{{ player.win_percentage }}</td>
+          {% if season.sport.track_score %}
+            <td>{{ player.points_diff }}</td>
+          {% endif %}
+          <td>{{ player.mmr }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <div class="actions text-right d-flex">
+      <div class="flex-grow-1">
+        <a class="btn btn-primary" href="{% url 'sports:game_create' season.pk %}">Add Game</a>
+      </div>
+      <a class="btn btn-secondary me-1" href="{% url 'sports:season_player_create' season.pk%}">Add Player</a>
+      <a class="btn btn-secondary" href="{% url 'sports:season_game_list' season.pk %}"></i>Games</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

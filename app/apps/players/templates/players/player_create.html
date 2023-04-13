@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load bootstrap5 %}
+
+
+{% block title %}Create Player{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h4>Create Player</h4>
+    <form action="{% url 'players:player_create' %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">
+            Submit
+            </button>
+        {% endbuttons %}
+    </form>
+</div>
+{% endblock %}

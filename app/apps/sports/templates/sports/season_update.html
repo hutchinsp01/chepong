@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load bootstrap5 %}
+
+
+{% block title %}Update Season{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h4>Update {{ season }}</h4>
+    {% comment %} Uncomment if we allow for Season Updating {% endcomment %}
+    {% comment %} <form action="{% url 'sports:season_update' season.pk %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
+    </form> {% endcomment %}
+
+    <form action="{% url 'sports:season_end' season.pk %}" method="post" class="form">
+        {% csrf_token %}
+        {% buttons %}
+            <button type="submit" class="btn btn-danger">End Season</button>
+        {% endbuttons %}
+    </form>
+    <form action="{% url 'sports:season_recalculate' season.pk %}" method="post" class="form">
+        {% csrf_token %}
+        {% buttons %}
+            <button type="submit" class="btn btn-danger">Recalculate Season</button>
+        {% endbuttons %}
+
+</div>
+{% endblock %}
