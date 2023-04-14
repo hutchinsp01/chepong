@@ -79,6 +79,13 @@ class SeasonPlayer(models.Model):
     def short_str(self) -> str:
         return f"{self.player.username}"
 
+    def get_streak_emoji(self) -> str:
+        if self.current_streak < 2:
+            return ""
+        if self.current_streak_winning:
+            return "🔥"
+        return "🥶"
+
     def get_absolute_url(self) -> str:
         return reverse("players:player_detail", kwargs={"pk": self.player.pk})
 
